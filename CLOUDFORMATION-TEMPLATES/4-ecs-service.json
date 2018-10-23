@@ -1,0 +1,70 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Trying to create ecs",
+    "Parameters": {
+        
+        "clustername": {
+            "Description": "Name of the cluster",
+            "Type": "String",
+            
+        },
+        
+        "servicename": {
+            "Description": "name of the service",
+            "Type": "String",
+            
+        },
+
+        
+        "taskdefname": {
+            "Description": "task definition name",
+            "Type": "String",
+            
+        },
+
+        
+        "desiredcount": {
+            "Description": "desired count for service",
+            "Type": "Number",
+            "Default": "0"
+        }
+        
+        
+        
+        
+    },
+    "Resources":{
+                
+
+          "myecscluster":{
+             "Description": "CLUSTER CREATED BY CLOUDFORMATION",
+             "Type": "AWS::ECS::Cluster",
+             "Properties": {
+                  "ClusterName" : { "Ref": "clustername" }
+                  
+            }
+          },
+
+          
+          "myservice": {
+              "Description": "ecs service",
+              "Type": "AWS::ECS::Cluster",
+              "Properties": {
+
+                "Cluster" : { "Ref": "myecscluster" },  
+                "DesiredCount" : 
+                { "Ref": "desiredcount" }
+                ,
+                "ServiceName" : 
+                { "Ref": "servicename" }
+                ,              
+                "TaskDefinition" : 
+                { "Ref": "taskdefname" }
+                
+              }
+          }
+          
+   
+    }
+
+}

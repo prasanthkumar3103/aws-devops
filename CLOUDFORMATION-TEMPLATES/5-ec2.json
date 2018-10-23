@@ -1,0 +1,73 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Trying to create ecs",
+    "parameters": {
+        "keyname": {
+            "Description": "Name of an existing ec2 keypair to enable SSH access to the instances ",
+            "Type":"AWS::EC2::Keypair::Keyname",
+            "ConstraintDescription": "Must be name of the existing ec2-keypair"
+        },
+        "InstanceType": {
+            "Description": "webserver Ec2 instance type",
+            "Type":"string",
+            "Default":"t2.micro",
+            "AllowedValues": [
+                "t1.micro",
+                "t2.nano"
+                              
+            ]
+        },
+        "SSHLocation": {
+            "Description": "The Ip address range that can be used to ssh to the instance",
+            "Type": "string",
+            "Minlength":"9",
+            "Maxlength":"18",
+            "Default": "0.0.0.0/0"
+        },
+        "Mapping": {
+            "AWSInstanceType2Arch": {
+                "t1.micro": {
+                    "Arch": "PV64"
+                },
+                "t2.nano": {
+                    "Arch": "HVM64"
+                }
+            }
+        },
+        "AWSRegionArch2AMI":{
+            "us-east-1":{
+                "PV64": "ami-2a69aa47",
+                "HVM64": "ami-6869aa05",
+                "HVMG2": "ami-920f8984"
+            },
+            "us-east-2":{
+                "PV64": "ami-7f77b31f",
+                "HVM64": "ami-7172b611",
+                "HVMG2": "ami-54d44234"
+
+            
+           },
+           "ap-southeast-1":{
+               "PV64": "ami-df9e4cbc",
+                "HVM64": "ami-a59b49c6",
+                "HVMG2": "ami-fa75ca99"
+
+
+            }
+
+},
+"WebserverSecurityGroup": {
+    "Type": "AWS::EC2::SecurityGroup",
+    "Properties": {
+        "GroupDescription": "simple-wordpress-webserver",       
+        "SecurityGroupIngress": [{
+            "CidrIp": "0.0.0.0/0",
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "ToPort": 80
+        }]
+    }
+}
+
+}
+}

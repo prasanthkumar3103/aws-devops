@@ -1,0 +1,17 @@
+it has 8 components
+
+1. awstemplateformatversion
+2.Decscription
+3.metadata
+4.parameters
+5.mappings
+6.conditions
+7.resources
+8.output
+
+
+"Outputs": {
+		"WordpressURL": {
+			"Description": "The URL of the simple Wordpress environment.",
+			"Value": {"Fn::Join": ["", ["http://", {"Fn::GetAtt": ["EC2Instance", "PublicIp"]}]]}
+		}

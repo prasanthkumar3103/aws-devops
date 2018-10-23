@@ -1,0 +1,11 @@
+s3 encryption:-
+----------------
+whatever data u upload in s3 ,it encrypted via https,meaning it is encrypted.
+
+
+encryption mechanism?  useful when we deal with bank/healthcare.
+
+1. we ask aws to encrypt
+2. we tell to encrypt using our pemfile.
+
+

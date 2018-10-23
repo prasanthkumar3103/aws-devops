@@ -1,0 +1,106 @@
+Q.what does Bucket contain?
+
+ans: folders and objects
+
+Q.what does folder contains
+ans:  objects and sub-folders
+
+Q.what are storage classes?
+ans. standard /redude redundancy/standarad in frequenct/
+storage classes can be switched any point from standarad to in frequent or redude redundancy
+but,we cannt change directly standard to glacier.for that to happen we need to use object life cycle.
+
+what is most expensive one?
+sol: standard and its default, it high durability and ha
+
+based out of file u use, we would select the storage class.
+
+
+object life cycle:-
+--------------------
+where we will tell for this particular object/folder what storage class to choose and when to choose
+first 1m/2m  standard,after 1m/2m go to standard infrequent and then go to glacier, for this to happen we use object life cycle.
+
+object life cycle is set of rules across the storage class.
+
+
+creation of bucket
+------------------
+1.create bucket(name and region)--
+2.configure options(versioning,server access log,default encryption,cloud watch metrics)
+3.set perimission :- 1.add other a/c if u want to 2.manage public permission 3.manage system permission
+
+
+	upload a file to bucket
+	------------------------
+	1.(drag n drop file u wish to):
+	2.set permission: 1.add other a/c if u want to 2.manage public permission 3.manage system permission
+	3.set propeties:
+	storage class:
+	--------------
+	1.standard	2. standard -IA 3.One zone IA 3.Reduce redundancy
+	
+	2. standard -IA:
+	----------------
+	For infrequently accessed data. Stores object data redundantly across multiple geographically separated Availability Zones.
+	Minimum 30-day retention period and minimum 128 KB object size.
+	3. one zone ia
+	--------------
+	For infrequently accessed data. Stores object data in only one Availability Zone at a lower price than Standard-IA. 
+	Minimum 30-day retention period and minimum 128 KB object size.
+	4. Reduced redundancy:-
+	-----------------------
+	Reduced redundancy for frequently accessed data. Stores noncritical, reproducible data at lower levels of redundancy than Standard.
+	
+	encryption
+	-----------
+	1.none(default)	2.amazon s3 master key(Use Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3)
+	3.aws kms master-key(Use Server-Side Encryption with AWS KMS-Managed Keys (SSE-KMS)
+	done
+
+	lets say u have file 1.json
+	----------------------------
+	1. click on the file
+		click on  properties:
+
+setting lifecycle rule
+---------------------
+in side the bucket u will have tabs i.e 1.overview 2.properties 3.permissions 4.management
+
+choose management:- under here u have many options
+1.life cycle 2.replications 3.analytics 4.metrics 5.inventory
+
+choose 1st lifecycle:-
+   add life cycle rule: 
+	1.enter rule name: myjson
+	2.transition: this comes under versioning config(only for current or previous version)
+	3.expiration: 
+		Configure expiration
+
+			Current version Previous versions
+	
+		Clean up expired object delete markers and incomplete multipart uploads
+
+			Clean up expired object delete markers (choose this)
+			Clean up incomplete multipart uploads 
+	in review tab,edit transition and set configure transition(current),
+	add transition:  object creation  >> select option transition to 
+					     standard -ia after days 30
+					     one zone-ia after days
+					     transition to glacier after days 90 days(default is 60 days)
+
+		we can have multiple transitions
+
+this we can do at object level also.
+
+
+
+Notes: Based on region , s3 copies to across az and regions.
+
+
+s3 is not file system, it is an http protocal, it is hosted via webserver internally.
+u can do put,get ,delete.s
+
+		
+
+

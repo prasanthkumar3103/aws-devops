@@ -1,0 +1,70 @@
+https://github.com/awslabs/aws-shell
+
+cli?
+
+everything is not possible from gui hence cli.
+
+iam user 
+connfigure cli(aws configure)
+
+
+cli installation
+--------------
+
+you should have python
+how do u check python is installed or not ,just python command.
+
+pip: is package manager for python lib like apt is manager for ubuntu
+
+1. apt-get install python-pip 
+2. pip install awscli
+3. complete -C aws_completer aws
+aws s (press tab, u will get tab help)
+s3                  sagemaker-runtime   serverlessrepo      ses                 sms                 sqs                 storagegateway      swf
+s3api               sdb                 servicecatalog      shield              snowball            ssm                 sts
+sagemaker           secretsmanager      servicediscovery    signer              sns                 stepfunctions       support
+4.pip install aws-shell
+5aws-shell
+
+aws> aws
+          acm
+          acm-pca
+          alexaforbusiness
+          apigateway
+          application-autoscaling
+          appstream
+          appsync
+above is the help u get
+
+aws> s3
+         website
+         mb
+         sync
+         mv
+         ls
+         rb
+         rm
+
+aws>s3api list-buckets
+it lists all buckets in  json format.
+
+
+listing specific bucket
+-----------------------
+aws>s3api list-buckets --bucket ppk-test-s3-1
+
+
+to get into local machine from s3 bucket
+-----------------------------------------
+aws>s3api get-object --bucket ppk-test-s3-1 --key hello.txt /home/ubuntu/hello.txt
+
+
+remove all objects in s3
+-------------------------
+aws s3 rm s3://ppk-test-s3-1 --recursive
+
+remove buckets which has object versioning?
+-------------------------------------------
+
+
+

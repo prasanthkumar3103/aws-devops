@@ -1,0 +1,27 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Trying to create ecs",
+    "Parameters": {
+        
+        "clustername": {
+            "Description": "Name of the cluster",
+            "Type": "String",
+            
+        }
+        
+    },
+    "Resources":{
+                
+
+          "myecscluster":{
+             "Description": "CLUSTER CREATED BY CLOUDFORMATION",
+             "Type": "AWS::ECS::Cluster",
+             "Properties": {
+                  "ClusterName" : { "Ref": "clustername" }
+                  
+            }
+          }
+   
+    }
+
+}

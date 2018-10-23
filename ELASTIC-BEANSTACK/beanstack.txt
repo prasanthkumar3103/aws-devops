@@ -1,0 +1,37 @@
+Beanstack:
+-----------
+1.hosting platform for different application(java,python,php,dotnet)
+2.this is for purely dev job
+3.you should have python  in machine(local)
+
+4.aws configure(give credentials of IAM user/role with access to elastic beanstack)
+5.install awsebcli (pip install awsebcli)
+6.navigate to some directory
+7.from cmdline use eb init(select docker as a platform)
+8.copy dockerfile into this directory
+9.execute eb create(this will create environment in application)
+10.if u want new changes make changes to dockerfile in current directory and execute
+eb deploy
+
+for each eb deploy, it creates everytime new version.
+
+installing docker/packages what application need it create implicitly
+also,security groups,
+internally it creates ec2 machines.
+
+it easy to wipe out environments,like for each release wise.
+
+
+write all these steps in jenkins file and it start does everything.
+
+developer would be uploading zip code or war file.
+
+
+q.will we be able to change ec2/software/load balancing etc during creation?
+yes
+
+
+lambda charges less than this beanstic?
+
+beanstack is free,but what ever creates to make app run(ec2,db etc, it charges for them)',usage beanstack doesnt charge.
+

@@ -1,0 +1,26 @@
+https://docs.aws.amazon.com/cli/latest/reference/s3api/
+
+aws>s3api list-buckets
+
+aws>s3api list-objects --bucket wells-s3-test
+
+aws > s3api get-object --bucket wells-s3-test --key Roles.txt /home/ubuntu/Roles.txt
+
+backup
+
+Copying a file from S3 to S3
+
+The following cp command copies a single s3 object to a specified bucket and key:
+
+aws s3 cp s3://mybucket/test.txt s3://mybucket/test2.txt
+
+s3 cp s3://prashanth.com/index.html s3://wells-s3-test/index.html
+
+s3 sync D:\DEVOPS\QT-DEVOPS-RECORDINGS\CI-CD s3://prashanth.com 
+windows syntax:-
+----------------
+aws s3 sync D:\DEVOPS\QT-DEVOPS-RECORDINGS\CI-CD s3://prashanth.com 
+
+s3 sync /home/ubuntu s3://prashanth.com
+
+schedule this job for backup's

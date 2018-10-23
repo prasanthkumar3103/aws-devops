@@ -1,0 +1,22 @@
+1.i have one.txt file
+2.i have enabled versioning 
+3.i have uploaded 2 versions of one.txt,after that i found out that i dont need versioniong and i have disabled versioning.
+  now that doesnt mean that one.txt will have one version,that means that from there on whatever the upload u want to do it will have one version.
+  but ur earlier versions will not be deleted.
+older versions deletion that u have to do ,aws doesnt delete default.
+
+meaning once versioning enabled & uploaded, it cant be delted ,only can be disabled.
+
+
+once one.txt upload ,enable versioning and upload same file multiple times and choose different storage class.
+
+q. can we have different storage class for same file with different version?
+sol:yes
+everytime u have to choose the storage class.
+
+
+notes: versioning options  enable/suspend.
+
+
+
+

@@ -1,0 +1,56 @@
+
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Trying to create ECS",
+    "Resources": {        #Here order is very important
+
+        "resourcename": {
+            "Description": "-",
+            "Type": "-",
+            "Properties": "-"
+        },        
+        "testme": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "KeyName": -,
+                "DisableApiTermination": "-",
+                "ImageId": { - },
+                "InstanceType": "-",
+                "Monitoring": "true|false",
+                "SecurityGroupIds" : [-],
+                "Tags": [
+                    {
+                        "Key": "-",
+                        "Value": "-"
+                    }
+                ],
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Join": [
+                            "",
+                            [
+                                "#!/bin/bash -ex",
+                                "-"
+                            ]
+                        ]
+                    }
+                }
+        }
+                }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,54 @@
+1.create user
+2.create a group
+3. assign user to create group
+4.assign policy to user
+5. delete user/group
+
+aws-shell
+aws>iam list-user
+{
+    "Users": [
+        {
+            "UserName": "u576750",
+            "PasswordLastUsed": "2018-10-20T18:45:15Z",
+            "CreateDate": "2018-10-20T18:42:04Z",
+            "UserId": "AIDAIIBYTY7PFEVS6NY5W",
+            "Path": "/",
+            "Arn": "arn:aws:iam::192278512822:user/u576750"
+        }
+    ]
+}
+
+google:-aws iam attach-user-policy cli
+
+https://docs.aws.amazon.com/cli/latest/reference/iam/attach-user-policy.html
+
+create a iam user
+-----------------
+aws> iam create-user --user 1714095
+{
+    "User": {
+        "UserName": "1714095",
+        "Path": "/",
+        "CreateDate": "2018-10-21T09:01:03Z",
+        "UserId": "AIDAIOKEHHSM6PUKF4FHO",
+        "Arn": "arn:aws:iam::192278512822:user/1714095"
+    }
+}
+
+
+list policies
+-------------
+aws>iam list-policies
+
+$ aws iam list-policies | more ( this help more do next(one after the other)
+
+identy policy from above command
+
+attaching policy
+-----------------
+aws>iam attach-user-policy --user-name 1714095 --policy-arn arn:aws:iam::aws:policy/CloudWatchEventsFullAccess
+
+
+
+

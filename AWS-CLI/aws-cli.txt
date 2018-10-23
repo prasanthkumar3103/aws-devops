@@ -1,0 +1,174 @@
+apt-get update
+
+apt-get install python-pip
+
+pip install awscli
+
+
+aws --version
+
+aws help
+
+
+complete -C aws_completer aws
+
+which aws_completer
+
+aws ec2 describe-regions
+
+pip install aws-shell
+
+
+aws configure
+AWS Access Key ID [****************BEUA]: AKIAIUCMETCVUY2GBEUA
+AWS Secret Access Key [****************Oob4]: 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
+Default region name [US WEST (Oregon)]: us-west-2
+Default output format [json]: json
+
+
+ # aws ec2 describe-instances
+{
+    "Reservations": [
+        {
+            "OwnerId": "569722878796",
+            "ReservationId": "r-04e90de598ffabc61",
+            "Groups": [],
+            "Instances": [
+                {
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "PublicDnsName": "ec2-34-208-228-114.us-west-2.compute.amazonaws.com",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "EbsOptimized": false,
+                    "LaunchTime": "2017-03-22T17:03:18.000Z",
+                    "PublicIpAddress": "34.208.228.114",
+                    "PrivateIpAddress": "172.31.15.6",
+                    "ProductCodes": [],
+                    "VpcId": "vpc-23245e44",
+                    "StateTransitionReason": "",
+                    "InstanceId": "i-0076f77cbf37cc3a5",
+                    "ImageId": "ami-ad24abcd",
+                    "PrivateDnsName": "ip-172-31-15-6.us-west-2.compute.internal",
+                    "KeyName": "ec2-cli",
+                    "SecurityGroups": [
+                        {
+                            "GroupName": "ec2-cli-WebServerSecurityGroup-1TR6LMNTWZB0Y",
+                            "GroupId": "sg-f04f4588"
+                        }
+                    ],
+                    "ClientToken": "ec2-c-WebSe-1MTQ8VL4PRZE9",
+                    "SubnetId": "subnet-d1c1c889",
+                    "InstanceType": "t2.micro",
+                    "NetworkInterfaces": [
+                        {
+                            "Status": "in-use",
+                            "MacAddress": "0a:1d:74:27:c0:2d",
+                            "SourceDestCheck": true,
+                            "VpcId": "vpc-23245e44",
+                            "Description": "",
+                            "Association": {
+                                "PublicIp": "34.208.228.114",
+                                "PublicDnsName": "ec2-34-208-228-114.us-west-2.compute.amazonaws.com",
+                                "IpOwnerId": "amazon"
+                            },
+                            "NetworkInterfaceId": "eni-dc10c28e",
+                            "PrivateIpAddresses": [
+                                {
+                                    "PrivateDnsName": "ip-172-31-15-6.us-west-2.compute.internal",
+                                    "Association": {
+                                        "PublicIp": "34.208.228.114",
+                                        "PublicDnsName": "ec2-34-208-228-114.us-west-2.compute.amazonaws.com",
+                                        "IpOwnerId": "amazon"
+                                    },
+                                    "Primary": true,
+                                    "PrivateIpAddress": "172.31.15.6"
+                                }
+                            ],
+                            "PrivateDnsName": "ip-172-31-15-6.us-west-2.compute.internal",
+                            "Attachment": {
+                                "Status": "attached",
+                                "DeviceIndex": 0,
+                                "DeleteOnTermination": true,
+                                "AttachmentId": "eni-attach-9bbe61fb",
+                                "AttachTime": "2017-03-18T14:41:43.000Z"
+                            },
+                            "Groups": [
+                                {
+                                    "GroupName": "ec2-cli-WebServerSecurityGroup-1TR6LMNTWZB0Y",
+                                    "GroupId": "sg-f04f4588"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "SubnetId": "subnet-d1c1c889",
+                            "OwnerId": "569722878796",
+                            "PrivateIpAddress": "172.31.15.6"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Placement": {
+                        "Tenancy": "default",
+                        "GroupName": "",
+                        "AvailabilityZone": "us-west-2c"
+                    },
+                    "Hypervisor": "xen",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/sda1",
+                            "Ebs": {
+                                "Status": "attached",
+                                "DeleteOnTermination": true,
+                                "VolumeId": "vol-0918d3c96a8e781c5",
+                                "AttachTime": "2017-03-18T14:41:43.000Z"
+                            }
+                        }
+                    ],
+                    "Architecture": "x86_64",
+                    "RootDeviceType": "ebs",
+                    "RootDeviceName": "/dev/sda1",
+                    "VirtualizationType": "hvm",
+                    "Tags": [
+                        {
+                            "Value": "ec2-cli",
+                            "Key": "aws:cloudformation:stack-name"
+                        },
+                        {
+                            "Value": "WebServerInstance",
+                            "Key": "aws:cloudformation:logical-id"
+                        },
+                        {
+                            "Value": "ec2-cli",
+                            "Key": "Name"
+                        },
+                        {
+                            "Value": "arn:aws:cloudformation:us-west-2:569722878796:stack/ec2-cli/e4a70a00-0be8-11e7-a900-503ac9316835",
+                            "Key": "aws:cloudformation:stack-id"
+                        }
+                    ],
+                    "AmiLaunchIndex": 0
+                }
+            ]
+        }
+    ]
+}
+
+
+#apt-get install jq
+
+#aws ec2 describe-instances | jq -r .
+
+aws> ec2 describe-instances --instance-ids  i-0076f77cbf37cc3a5
+
+
+
+why cli?
+
+For Automation.
+
+daily 12'o clock u have to create 1 ec2 instacnce and automate through CLi.
+
+
+aws configure

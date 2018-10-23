@@ -1,0 +1,20 @@
+{
+    "Type" : "AWS::ECS::Service",
+    "Properties" : {
+      "Cluster" : String,
+      "DeploymentConfiguration" : DeploymentConfiguration,
+      "DesiredCount" : Integer,
+      "HealthCheckGracePeriodSeconds" : Integer,
+      "LaunchType" : String,
+      "LoadBalancers" : [ Load Balancer Objects, ... ],
+      "NetworkConfiguration" : NetworkConfiguration,
+      "PlacementConstraints" : [ PlacementConstraints, ... ],
+      "Role" : String,
+      "PlacementStrategies" : [ PlacementStrategies, ... ],
+      "PlatformVersion" : String,
+      "SchedulingStrategy" : String,
+      "ServiceName" : String,
+      "ServiceRegistries" : [ ServiceRegistry, ... ,
+      "TaskDefinition" : String
+    }
+  }

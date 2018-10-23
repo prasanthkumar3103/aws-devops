@@ -1,0 +1,33 @@
+1.create folder on machine and create sync b/w machine and s3.
+
+ex:
+i would create devops in localmachine then i want to have sync in s3
+
+
+google:aws s3 cli
+
+https://docs.aws.amazon.com/cli/latest/reference/s3api/
+
+
+how will cli know who you're?
+sol: iam
+
+cli to work we need python,
+completor installation helps us to guide in cli when do tab 
+pip install shell help us more useful
+run aws-shell 
+aws>s3 ls (listing all buckets)
+
+Copying a file from S3 to S3
+
+The following cp command copies a single s3 object to a specified bucket and key:
+
+aws s3 cp s3://mybucket/test.txt s3://mybucket/test2.txt
+
+
+
+
+
+
+
+

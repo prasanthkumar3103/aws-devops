@@ -1,0 +1,74 @@
+opswork:
+--------
+1. this is an aws service to create to infrastructure in aws.
+2. it uses of chef for some of it activities
+
+how is ops works different from cloudformation or elasticbeanstack?
+sol:
+
+elasticbeanstack: closer to dev(building dot net orjava or nodejs or php appl)
+cloudformation :closer aws service,speaks to aws infrastructure
+
+ops works : closer to admin world/configuration management tool
+
+Notes:-
+--------
+1. we create stack in opswork,each stack contains layer
+
+elb is one layer,application is one layer and db is one layer
+
+how many layers we can create?
+it depends on our application.
+
+2. we would have stack for deployments(SIT,QA,PTE,STAGING AND PROD STACKS)
+
+3. WE Will have 2 repo's , one for cookbook and 2 is for app repository.
+
+
+Layer life cycle:- every layer will have eventing,during this events we can call recipes else manual execution.
+
+events
+
+set up: when ec2 is set up/booted ( here we can chef receipes)
+configure: whenever there is change in instance(like when instance online or leave state)
+deploy:for deploy app
+undeploy:for undeploy app
+shutdown: when to shutdown layer(ec2)
+
+
+ops work provides three solutions to configure ur infrastructure
+
+1.creating stack
+================
+
+1.opswork stack: (choose this.)
+2.opswork for chef automate
+3.opswork for puppet automate
+
+
+whenever u choose ops work its has to be either linux or windows, not both
+
+once u have choose ops work based on organization chef version(11,12),choose appropriate one
+
+name stackname,region,vpc,subnet,os,chef version
+Use custom Chef cookbooks :yes
+repo type: git,s3 archive,http.svn
+repo url:https://github.com/prasanthkumar3103/ChefZone_Batch1/blob/master/demo/cookbooks/webapp-linux/recipes/default.rb
+
+
+advanced options:
+	default root device tyep: EBS backed(choose), instance store
+	IAM role
+
+add stack
+
+
+2.creating layer
+================
+
+name:
+	create
+
+go to setting
+		instance shutdown time:120
+

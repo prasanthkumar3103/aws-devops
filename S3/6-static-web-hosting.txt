@@ -1,0 +1,35 @@
+go s3 console create bucket
+
+name: www.ppksoft.com
+
+click on bucket
+	select properties : static web hosting(select use this bucket to host website)
+			    use this bucket for redirect(other option we have)
+			index.html
+			error document: error.html (redirection) --> save
+
+	static web hosting gives url url.
+
+it need 2 html files
+
+
+upload them to bucket
+
+static web hosting provides url,try accessing it. it will throw error,reason its nt public.
+
+select both objects(index and error.html), go to permission choose everyone.
+
+select both objects, go to more,and choose make public.
+
+index1.html add this to url access, this goes to error.html as no page on index1.html
+
+
+use this bucket for redirect(other option we have)
+----------------------------------------------------
+
+target bucket or domain:
+
+
+
+protocal:https
+

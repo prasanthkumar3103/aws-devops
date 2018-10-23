@@ -1,0 +1,89 @@
+
+json?
+-----
+is a file format to represent data.
+
+SAVING something into memory in files format is called serialization.
+something saving to file and loading into ram/memory(programming language format)--deserialization.
+
+xml:- extensible mark up language
+-----------------------------------
+first generation file to store data, here file size will be more
+human readable
+
+json & yaml :
+-----------
+serialization file formats to represents data & file size is less compare to xml.
+human readable.
+
+
+
+Notes:-
+-------
+there will be scalar data.
+if ur value cannot represented one datastructure then that is not scalar.
+ex: age (integer), name(string).
+mostly used format is json.
+
+sometimes we maintain multiple data
+ex: course [ devops,aws,linux,python]
+
+key      value
+
+name:    "qt"
+age :  	  10
+licenced: true
+
+
+json format
+-------------
+it starts with curly braces.
+
+{
+"name":"QT",
+"age":5,
+"courses":["devops","aws","python"]
+
+}
+
+when we have multiple we represent in array.
+
+
+dealing xml with multiple institues
+------------------------------------
+{
+"institutes":[
+
+
+{
+"name":"QT",
+"age":5,
+"courses":["devops","aws","python"]
+
+},
+
+
+{
+"name":"pearson",
+"age":15,
+"courses":["ccna","jna"]
+
+}
+
+],
+
+"schools": [
+{
+ "name":"HPS"
+ "ST-YR": 1967"
+},
+
+{
+ "name":"kendriya vidyalaya"
+ "st_yr":1956
+}
+]
+
+
+{} :- object
+[] :- array (for multiple)
