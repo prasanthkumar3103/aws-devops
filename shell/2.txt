@@ -1,0 +1,18 @@
+there is no much difference b/w unix and linux.
+
+that command you use in unix, that works in linux
+
+architecture wise , it is same.
+
+total features or unix and linux are same.
+
+shell scripting concept in unix and linux are same.
+
+meaning, learing unix or linux it doesnt make any differnece in now a days other than adminstrators.
+
+you're not administrator, you should not worry about that.
+
+
+your interviewer asked, did u work in linux or unix?
+
+simply say that doesnt matters for me working in unix or linux.

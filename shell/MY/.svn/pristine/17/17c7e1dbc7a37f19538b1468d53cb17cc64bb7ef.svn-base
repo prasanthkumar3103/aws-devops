@@ -1,0 +1,48 @@
+#!/usr/bin/ksh
+######################################################################################
+# Program ID      : scb_purge.sh
+#
+# Function        : To purge the daily, weekly & monthly interface files,
+#                      retention period is 5, 35 and 90 days respectively
+#                   To purge the error & log files, retention is 5 days
+#                   To purge the r2wreports files, retention is 1 day
+#                   To purge the sysout files, retention is 3 days
+#
+# Program History :
+#
+# Date       Amended By           Changes/Remarks
+# ========   ================     ===============
+# 20120606   Karthik.G     New Program
+#
+######################################################################################
+
+
+# To exit immediately if a command exits with a non-zero exit status
+set -e
+
+
+######################################################################################
+# To purge the files
+######################################################################################
+RETENTION=10
+
+REPORTS=/prd/psftp/gbl/psreports
+
+      	DIR=$REPORTS/PSFTPPRD
+	if [ -d "$DIR" ]; then
+		cd $DIR
+      		CHK_DIR=`ls | wc -l`
+		if [ $CHK_DIR -gt 0 ]; then
+
+                 find $DIR/ -maxdepth 1 -mtime +$RETENTION -print | awk '{print "rm -rf "$1}' > $DIR/files_list
+			chmod u+x $DIR/files_list
+			$DIR/files_list
+			echo " Housekeeping $DIR directory completed.\n\n"
+		else
+         		echo "\n\nThere is nothing to be deleted in $DIR directory.\n\n"
+      		fi
+   	fi
+
+
+
+
